@@ -5,7 +5,7 @@ from src.config import API_URL
 
 
 def get_all_superheroes() -> list:
-    response = requests.get(API_URL)
+    response = requests.get(API_URL, timeout=10)
     response.raise_for_status()
     return response.json()
     
