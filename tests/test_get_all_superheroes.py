@@ -1,6 +1,9 @@
+import pytest
+
 from src.main import get_all_superheroes
 
 
+@pytest.mark.unit
 def test_get_all_superheroes_response():
     result = get_all_superheroes()
 
@@ -8,6 +11,7 @@ def test_get_all_superheroes_response():
     assert len(result) > 0
 
 
+@pytest.mark.unit
 def test_get_all_superheroes_structure():
     heroes = get_all_superheroes()
     hero = heroes[0]

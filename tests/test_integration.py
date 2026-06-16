@@ -1,6 +1,9 @@
+import pytest
+
 from src.main import get_all_superheroes, get_tallest_superhero
 
 
+@pytest.mark.integration
 def test_tallest_superhero_integration():
     heroes = get_all_superheroes()
 
