@@ -50,3 +50,13 @@ def test_get_tallest_superhero_returns_none():
     )
 
     assert result is None
+
+
+def test_get_tallest_superhero_empty_list():
+    result = get_tallest_superhero(
+        superheroes=[],
+        gender="Male",
+        has_work=True
+    )
+
+    assert result is None
