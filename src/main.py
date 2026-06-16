@@ -15,6 +15,12 @@ def get_superhero_height(superhero: Dict[str, Any]) -> int:
     return int(height.replace(" cm", ""))
 
 
+def has_work_status(superhero: Dict[str, Any]) -> bool:
+    occupation = superhero["work"]["occupation"]
+
+    return bool(occupation and occupation != "-" and occupation.strip()) # .strip() для случая occupation = ""
+
+
 def get_tallest_superhero(gender: str, has_work: bool) -> Optional[Dict[str, Any]]:
     superheroes = get_all_superheroes()
     filtered_superheroes = []
