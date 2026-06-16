@@ -13,3 +13,4 @@ def test_tallest_superhero_integration():
     assert result is not None
     assert "name" in result
     assert "appearance" in result
+    assert "work" in result
