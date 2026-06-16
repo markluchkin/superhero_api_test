@@ -5,9 +5,12 @@ from src.config import API_URL
 
 
 def get_all_superheroes() -> list:
-    response = requests.get(API_URL, timeout=10)
-    response.raise_for_status()
-    return response.json()
+    try:
+        response = requests.get(API_URL, timeout=10)
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        raise RuntimeError(f"Failed: {e}")
     
 
 def get_superhero_height(superhero: Dict[str, Any]) -> int:
