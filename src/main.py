@@ -29,7 +29,7 @@ def has_work_status(superhero: dict[str, Any]) -> bool:
     return bool(occupation and occupation != "-" and occupation.strip())
 
 
-def get_tallest_superhero(superheroes: list, gender: str, has_work: bool) -> Optional[dict[str, Any]]:
+def get_tallest_superhero(superheroes: list[dict[str, Any]], gender: str, has_work: bool) -> Optional[dict[str, Any]]:
     filtered_superheroes = [
         superhero for superhero in superheroes 
         if superhero["appearance"]["gender"] == gender
