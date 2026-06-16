@@ -1,7 +1,7 @@
 import requests
 from typing import Optional, Dict, Any
 
-from config import API_URL
+from src.config import API_URL
 
 
 def get_all_superheroes() -> list:
