@@ -1,10 +1,10 @@
 import requests
-from typing import Optional, Dict, Any
+from typing import Optional, Any
 
 from src.config import API_URL
 
 
-def get_all_superheroes() -> list:
+def get_all_superheroes() -> list[dict[str, Any]]:
     try:
         response = requests.get(API_URL, timeout=10)
         response.raise_for_status()
@@ -13,7 +13,7 @@ def get_all_superheroes() -> list:
         raise RuntimeError(f"Failed: {e}")
     
 
-def get_superhero_height(superhero: Dict[str, Any]) -> int:
+def get_superhero_height(superhero: dict[str, Any]) -> int:
     height = superhero["appearance"]["height"][1]
     if height.endswith(" cm"):
         return int(height.replace(" cm", ""))
@@ -23,13 +23,13 @@ def get_superhero_height(superhero: Dict[str, Any]) -> int:
     return 0
 
 
-def has_work_status(superhero: Dict[str, Any]) -> bool:
+def has_work_status(superhero: dict[str, Any]) -> bool:
     occupation = superhero["work"]["occupation"]
 
     return bool(occupation and occupation != "-" and occupation.strip())
 
 
-def get_tallest_superhero(superheroes: list, gender: str, has_work: bool) -> Optional[Dict[str, Any]]:
+def get_tallest_superhero(superheroes: list, gender: str, has_work: bool) -> Optional[dict[str, Any]]:
     filtered_superheroes = [
         superhero for superhero in superheroes 
         if superhero["appearance"]["gender"] == gender
