@@ -36,5 +36,3 @@ def get_tallest_superhero(gender: str, has_work: bool) -> Optional[Dict[str, Any
     ]
 
     return max(filtered_superheroes, key=get_superhero_height)
-
-print(get_tallest_superhero("Male", False))
