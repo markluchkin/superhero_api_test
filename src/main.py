@@ -35,4 +35,7 @@ def get_tallest_superhero(gender: str, has_work: bool) -> Optional[Dict[str, Any
         and has_work_status(superhero=superhero) == has_work
     ]
 
+    if not filtered_superheroes:
+        return None
+
     return max(filtered_superheroes, key=get_superhero_height)
