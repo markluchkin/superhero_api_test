@@ -1,4 +1,4 @@
-from src.main import get_tallest_superhero, get_all_superheroes
+from src.main import get_tallest_superhero
 from tests.test_data import TEST_SUPERHEROES
 
 
