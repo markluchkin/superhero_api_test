@@ -14,7 +14,7 @@ def get_all_superheroes() -> list[dict[str, Any]]:
     
 
 def get_superhero_height(superhero: dict[str, Any]) -> int:
-    height = superhero["appearance"]["height"][1]
+    height = superhero["appearance"]["height"][1].strip()
     if height.endswith(" cm"):
         return int(height.replace(" cm", ""))
     if height.endswith(" meters"):
